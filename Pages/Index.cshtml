@@ -1,10 +1,20 @@
 ﻿@page
-@model IndexModel
+@model CityBreaks.Web.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Cidades Disponíveis</h2>
+
+@foreach (var city in Model.Cities)
+{
+    <div style="margin-bottom: 1rem;">
+        <h3>@city.Name, @city.Country.CountryName</h3>
+        <ul>
+            @foreach (var property in city.Properties)
+            {
+                <li><strong>@property.Name</strong> – R$ @property.PricePerNight</li>
+            }
+        </ul>
+    </div>
+}

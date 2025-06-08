@@ -12,7 +12,7 @@
         public Country Country { get; set; }
 
         // Navegação 1:N para Property
-        public List<Property> Properties;
+        public List<Property> Properties { get; set; } = new();
 
     }
 }

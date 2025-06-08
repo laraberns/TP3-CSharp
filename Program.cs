@@ -1,4 +1,5 @@
 using CityBreaks.Web.Data;
+using CityBreaks.Web.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace CityBreaks.Web
@@ -13,6 +14,8 @@ namespace CityBreaks.Web
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+
+            builder.Services.AddScoped<ICityService, CityService>();
 
             var app = builder.Build();
 
