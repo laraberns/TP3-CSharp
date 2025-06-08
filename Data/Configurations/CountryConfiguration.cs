@@ -14,6 +14,11 @@ namespace CityBreaks.Web.Data.Configurations
 
             builder.Property(c => c.CountryCode)
                    .HasColumnName("CountryCode");
+
+            builder.HasData(
+    new Country { Id = 1, CountryCode = "PT", CountryName = "Portugal" },
+    new Country { Id = 2, CountryCode = "ES", CountryName = "Espanha" }
+);
         }
     }
 }
