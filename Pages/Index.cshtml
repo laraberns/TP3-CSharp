@@ -14,6 +14,9 @@
             @foreach (var property in city.Properties)
             {
                 <li><strong>@property.Name</strong> – R$ @property.PricePerNight</li>
+                <a asp-page="/CityDetails" asp-route-name="@city.Name">
+                    Ver detalhes
+                </a>
             }
         </ul>
     </div>

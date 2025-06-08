@@ -1,0 +1,24 @@
+﻿@page "{name}"
+@model CityBreaks.Web.Pages.CityDetailsModel
+@{
+    ViewData["Title"] = "Detalhes da Cidade";
+}
+
+<h2>@Model.City.Name, @Model.City.Country.CountryName</h2>
+
+@if (Model.City.Properties?.Count > 0)
+{
+    <h4>Propriedades disponíveis:</h4>
+    <ul>
+        @foreach (var prop in Model.City.Properties)
+        {
+            <li>
+                <strong>@prop.Name</strong> – R$ @prop.PricePerNight
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Sem propriedades cadastradas.</p>
+}
