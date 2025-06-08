@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CityBreaks.Web.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CityBreaks.Web.Data
 {
