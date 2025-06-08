@@ -7,5 +7,7 @@ namespace CityBreaks.Web.Data
     {
         public CityBreaksContext(DbContextOptions<CityBreaksContext> options) : base(options) { }
         DbSet<Country> Countries { get; set; }
+
+        DbSet<City> Cities { get; set; }
     }
 }
