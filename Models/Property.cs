@@ -6,6 +6,8 @@
         public string Name { get; set; }
         public decimal PricePerNight { get; set; }
 
+        public DateTime? DeletedAt { get; set; }
+
         // Foreign Key
         public int CityId { get; set; }
 
