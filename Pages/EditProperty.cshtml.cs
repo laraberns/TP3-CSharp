@@ -33,7 +33,6 @@ namespace CityBreaks.Web.Pages
                 return NotFound();
             }
 
-            // Carrega cidades para dropdown
             var cities = await _context.Cities.OrderBy(c => c.Name).ToListAsync();
             CitiesSelectList = new SelectList(cities, "Id", "Name", Property.CityId);
 
@@ -49,7 +48,6 @@ namespace CityBreaks.Web.Pages
                 return NotFound();
             }
 
-            // Remover validação para a propriedade de navegação City, que não vem do formulário
             ModelState.Remove("Property.City");
 
             if (!await TryUpdateModelAsync<Property>(
@@ -63,7 +61,6 @@ namespace CityBreaks.Web.Pages
                 foreach (var err in errors)
                     Console.WriteLine("Erro de validação: " + err);
 
-                // Recarrega cidades para dropdown em caso de erro
                 var cities = await _context.Cities.OrderBy(c => c.Name).ToListAsync();
                 CitiesSelectList = new SelectList(cities, "Id", "Name", propertyToUpdate.CityId);
 
